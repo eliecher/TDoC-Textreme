@@ -25,7 +25,6 @@ class Text_editor {
 	JTextField fontEnter;
 	JButton fontButt;
 	JScrollPane scroll;
-	Cursor cur;
 
 	public Text_editor() {
 		frame = new JFrame("Textreme");
@@ -33,11 +32,11 @@ class Text_editor {
 		frame.setBounds(0, 0, 735, 475);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		textArea = new JTextPane();
-		cur = new Cursor(0);
-		textArea.setCursor(cur);
+		textArea.setCursor(new Cursor(0));
 		textArea.setCaretColor(Color.WHITE);
+		textArea.getCaret().setBlinkRate(500);
 		textArea.setFont(new Font("Ubuntu", Font.PLAIN, 18));
 		scroll = new JScrollPane(textArea);
-		frame.getContentPane().add(scroll,BorderLayout.CENTER);
+		frame.getContentPane().add(scroll, BorderLayout.CENTER);
 	}
 }

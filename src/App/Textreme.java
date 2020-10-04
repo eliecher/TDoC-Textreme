@@ -28,6 +28,8 @@ class Text_editor {
 	Cursor cur;
 
 	public Text_editor() {
+	
+		public Text_editor() {
 		frame = new JFrame("Textreme");
 		frame.setLayout(new BorderLayout());
 		frame.setBounds(0, 0, 735, 475);
@@ -35,7 +37,9 @@ class Text_editor {
 		textArea = new JTextPane();
 		cur = new Cursor(0);
 		textArea.setCursor(cur);
+		textArea.setCursor(new Cursor(0));
 		textArea.setCaretColor(Color.WHITE);
+		textArea.getCaret().setBlinkRate(500);
 		textArea.setFont(new Font("Ubuntu", Font.PLAIN, 18));
 		scroll = new JScrollPane(textArea);
 		frame.getContentPane().add(scroll,BorderLayout.CENTER);
